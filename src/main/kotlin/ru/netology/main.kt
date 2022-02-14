@@ -1,10 +1,13 @@
 package ru.netology
 
 fun main() {
-    var moneyTransfer = 200000
-    val amount = moneyTransfer * 100
-    val commission = if (((amount * 0.75) / 100) > 35 * 100) ((amount * 0.75) / 100) else 35 * 100
-    val resultCommission = commission.toInt()
+    var moneyTransfer = 1000
+    val kopecks = 100
+    val amount = moneyTransfer * kopecks
+    val minTransferKopecks = 35 * kopecks
+    val commission = ((amount * 0.75) / 100)
+    val commissionToCard = if (commission > minTransferKopecks) commission else minTransferKopecks
+    val resultCommission = commissionToCard.toInt()
 
     println("$resultCommission коп")
 
